@@ -24,7 +24,6 @@ class Persona {
     }
 }
 var persona = new Persona("Manuel Sadosky", "Desarrollador", "CABA");
-persona.Nombre = "Andrés";
 persona.saludar();
 document.getElementById("nombre").innerHTML = persona.Nombre;
 document.getElementById("perfil").innerHTML = persona.perfil;

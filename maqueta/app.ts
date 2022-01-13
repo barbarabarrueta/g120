@@ -39,7 +39,6 @@ class Persona
 }
 
 var persona:Persona=new Persona("Manuel Sadosky","Desarrollador","CABA");
-persona.Nombre="Andrés";
 persona.saludar();
 
 (document.getElementById("nombre") as HTMLParagraphElement).innerHTML=persona.Nombre;
