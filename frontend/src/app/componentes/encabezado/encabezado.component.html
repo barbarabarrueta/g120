@@ -1,6 +1,53 @@
 <header>
-    <img [src]="persona.image"  alt="Foto de Manuel Sadosky" style="width: 100%;">
+    <img [src]="persona.image" alt="Foto de Manuel Sadosky" style="width: 100%;">
     <h1 id="nombre" class="nombre">{{persona.fullName}}</h1>
     <p id="perfil">{{persona.position}}</p>
     <p id="residencia">{{persona.ubication}}</p>
+    <button *ngIf="usuarioAutenticado" class="btn btn-primary" data-bs-toggle="modal"
+        data-bs-target="#modalEncabezado">Editar</button>
 </header>
+
+<!-- Modal -->
+<div class="modal fade" id="modalEncabezado" tabindex="-1" aria-labelledby="tituloModalEncabezado" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="tituloModalEncabezado">Editar Encabezado</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="form">
+                    <div class="mb-3">
+                        <label for="fullName" class="form-label">Apellido y Nombre</label>
+                        <input type="text" class="form-control" id="fullName" formControlName="fullName">
+                        <div *ngIf="fullName?.invalid && fullName?.touched">
+                            <div *ngIf="fullName?.errors?.['required']" class="text-danger">
+                                El apellido y nombre es requerido.
+                            </div>
+                            <div *ngIf="fullName?.errors?.['minlength']" class="text-danger">
+                               El apellido y nombre debe tener como  mínimo 5 caracteres.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="position" class="form-label">Posición</label>
+                        <input type="text" class="form-control" id="position" formControlName="position">
+                        <div class="mb-3">
+                            <label for="ubication" class="form-label">Lugar de residencia</label>
+                            <input type="text" class="form-control" id="ubication" formControlName="ubication">
+                        </div>
+                        <div class="mb-3">
+                            <label for="url" class="form-label">Url de la imagen</label>
+                            <input type="text" class="form-control" id="url" formControlName="url">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="cerrarModalEncabezado" class="btn btn-secondary"
+                    data-bs-dismiss="modal">Salir</button>
+                <button type="button" class="btn btn-primary" (click)="guardarDatosEncabezado()">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>

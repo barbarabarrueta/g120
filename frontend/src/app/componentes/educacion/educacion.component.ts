@@ -7,11 +7,14 @@ import { MiPortfolioService } from 'src/app/servicios/mi-portfolio.service';
   styleUrls: ['./educacion.component.css']
 })
 export class EducacionComponent implements OnInit {
-
+  educacion:any;
   constructor(private miServicio:MiPortfolioService) { }
 
   ngOnInit(): void {
-  
+   this.miServicio.obtenerDatosEducacion().subscribe(data =>{
+     console.log(data);
+     this.educacion=data["education"];
+   });
   }
 
 }
