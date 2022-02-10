@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Persona } from 'src/app/entidades/persona';
 import { MiPortfolioService } from 'src/app/servicios/mi-portfolio.service';
 
 @Component({
@@ -35,13 +36,30 @@ export class EncabezadoComponent implements OnInit {
   guardarDatosEncabezado(){
     if (this.form.valid)
     {
-      alert("Enviar los datos al  servidor (servicio)");
-      this.form.reset();
-      document.getElementById("cerrarModalEncabezado")?.click();
+      let fullName=this.form.get("fullName")?.value;
+      let position=this.form.get("position")?.value;
+      let ubication=this.form.get("ubication")?.value;
+      let url=this.form.get("url")?.value;
+
+      let personaEditar=new Persona(fullName,position,ubication,url);
+      this.miServicio.editarDatosPersona(personaEditar).subscribe({next: (d) => {
+        this.persona=personaEditar;
+        document.getElementById("cerrarModalEncabezado")?.click();
+      },
+        error:(e)=> {alert("Ups, no se puedo actualizar el registro.")}
+      })
     }
     else{
       //alert("Hay errores");
       this.form.markAllAsTouched();
     }
+  }
+
+  mostrarDatosEncabezado()
+  {
+    this.form.get("fullName")?.setValue(this.persona.fullName);
+    this.form.get("position")?.setValue(this.persona.position);
+    this.form.get("ubication")?.setValue(this.persona.ubication);
+    this.form.get("url")?.setValue(this.persona.image);
   }
 }

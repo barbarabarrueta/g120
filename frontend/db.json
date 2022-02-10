@@ -1,0 +1,54 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "fullName": "Manuel Andrés Sadosky",
+      "position": "Frontend Developer",
+      "ubication": "CABA (Argentina) ",
+      "image": "https://i2.wp.com/imagenes.milenio.com/E-yJnq9EhkZhWaU7T_2utkyTymQ=/958x596/smart/https://www.milenio.com/uploads/media/2018/10/05/steve-jobs-perdio-vida-consecuencia_0_199_1193_742.jpg?w=640&ssl=1",
+      "id": 2
+    },
+    {
+      "fullName": "Manuel Andrés Sadosky",
+      "position": "Frontend Developer",
+      "ubication": "CABA (Argentina) ",
+      "image": "https://i2.wp.com/imagenes.milenio.com/E-yJnq9EhkZhWaU7T_2utkyTymQ=/958x596/smart/https://www.milenio.com/uploads/media/2018/10/05/steve-jobs-perdio-vida-consecuencia_0_199_1193_742.jpg?w=640&ssl=1",
+      "id": 3
+    },
+    {
+      "fullName": "Manuel Andrés Sadosky",
+      "position": "Frontend Developer",
+      "ubication": "CABA (Argentina) ",
+      "image": "https://i2.wp.com/imagenes.milenio.com/E-yJnq9EhkZhWaU7T_2utkyTymQ=/958x596/smart/https://www.milenio.com/uploads/media/2018/10/05/steve-jobs-perdio-vida-consecuencia_0_199_1193_742.jpg?w=640&ssl=1",
+      "id": 4
+    },
+    {
+      "fullName": "Manuel Andrés Sadosky",
+      "position": "Frontend Developer",
+      "ubication": "CABA (Argentina) ",
+      "image": "https://i2.wp.com/imagenes.milenio.com/E-yJnq9EhkZhWaU7T_2utkyTymQ=/958x596/smart/https://www.milenio.com/uploads/media/2018/10/05/steve-jobs-perdio-vida-consecuencia_0_199_1193_742.jpg?w=640&ssl=1",
+      "id": 5
+    },
+    {
+      "fullName": "Manuel Andrés Sadosky",
+      "position": "Informático",
+      "ubication": "CABA (Argentina) ",
+      "image": "https://i2.wp.com/imagenes.milenio.com/E-yJnq9EhkZhWaU7T_2utkyTymQ=/958x596/smart/https://www.milenio.com/uploads/media/2018/10/05/steve-jobs-perdio-vida-consecuencia_0_199_1193_742.jpg?w=640&ssl=1",
+      "id": 6
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
